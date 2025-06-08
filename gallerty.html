@@ -7,27 +7,65 @@
   <link rel="icon" href="logo.png" type="image/png" />
   <style>
     body { margin: 0; font-family: 'Poppins', sans-serif; background: #fff; color: #333; }
-    header { background: #3ba14f; color: white; padding: 20px; text-align: center; }
-    header img { max-height: 60px; vertical-align: middle; }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 70px;
+      z-index: 999;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #3ba14f;
+      font-weight: 600;
+      font-size: 16px;
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    .nav-logo {
+      position: absolute;
+      right: 30px;
+      top: 10px;
+    }
+
+    .nav-logo img {
+      height: 50px;
+      cursor: pointer;
+    }
+
+    header { margin-top: 90px; text-align: center; }
     section { padding: 60px 20px; max-width: 1000px; margin: auto; }
-    h1, h2 { color: #3ba14f; text-align: center; margin-bottom: 20px; }
-    p { font-size: 18px; line-height: 1.6; text-align: center; }
-    .gallery-grid {
+    h1 { color: #3ba14f; margin-bottom: 10px; }
+    p { font-size: 18px; color: #555; margin-bottom: 40px; }
+
+    .image-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 15px;
     }
-    .gallery-item {
-      text-align: center;
-    }
-    .gallery-item img {
+
+    .image-grid img {
       width: 100%;
-      border-radius: 8px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
-    .gallery-item p {
-      font-size: 14px;
-      margin-top: 6px;
-    }
+
     footer {
       background: #3ba14f;
       color: white;
@@ -35,40 +73,48 @@
       padding: 20px;
       font-size: 14px;
     }
+
+    @media(max-width: 600px) {
+      .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 60px;
+      }
+      .nav-logo {
+        top: 5px;
+        right: 10px;
+      }
+    }
   </style>
 </head>
 <body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="strutture.html">Strutture</a>
+      <a href="progetto.html">Progetto</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contatti.html">Contatti</a>
+    </div>
+    <a class="nav-logo" href="index.html">
+      <img src="logo.png" alt="Wallparty Logo">
+    </a>
+  </nav>
+
   <header>
-    <img src="logo.png" alt="Wallparty Logo" />
+    <h1>Guarda cosa facciamo</h1>
+    <p>Scopri i momenti più belli dei nostri eventi, fiere e giornate verticali in tutta Italia.</p>
   </header>
 
   <section>
-    <h1>Guarda cosa facciamo</h1>
-    <p>
-      Momenti unici, sorrisi in vetta, arrampicate indimenticabili: una selezione delle nostre esperienze in giro per l’Italia.
-    </p>
-  </section>
-
-  <section class="gallery-grid">
-    <div class="gallery-item">
-      <img src="evento1.jpg" alt="Evento 1" />
-      <p>📍 Milano, 2024</p>
-    </div>
-    <div class="gallery-item">
-      <img src="evento2.jpg" alt="Evento 2" />
-      <p>📍 Roma, Festival dello Sport</p>
-    </div>
-    <div class="gallery-item">
-      <img src="evento3.jpg" alt="Evento 3" />
-      <p>📍 Lago di Garda, estate</p>
-    </div>
-    <div class="gallery-item">
-      <img src="evento4.jpg" alt="Evento 4" />
-      <p>📍 Scuola primaria, progetto inclusione</p>
-    </div>
-    <div class="gallery-item">
-      <img src="evento5.jpg" alt="Evento 5" />
-      <p>📍 Torino, team building aziendale</p>
+    <div class="image-grid">
+      <img src="gallery1.jpg" alt="Evento Wallparty 1" />
+      <img src="gallery2.jpg" alt="Evento Wallparty 2" />
+      <img src="gallery3.jpg" alt="Evento Wallparty 3" />
+      <img src="gallery4.jpg" alt="Evento Wallparty 4" />
+      <img src="gallery5.jpg" alt="Evento Wallparty 5" />
     </div>
   </section>
 

@@ -7,28 +7,74 @@
   <link rel="icon" href="logo.png" type="image/png" />
   <style>
     body { margin: 0; font-family: 'Poppins', sans-serif; background: #fff; color: #333; }
-    header { background: #3ba14f; color: white; padding: 20px; text-align: center; }
-    header img { max-height: 60px; vertical-align: middle; }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 70px;
+      z-index: 999;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #3ba14f;
+      font-weight: 600;
+      font-size: 16px;
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    .nav-logo {
+      position: absolute;
+      right: 30px;
+      top: 10px;
+    }
+
+    .nav-logo img {
+      height: 50px;
+      cursor: pointer;
+    }
+
+    header { margin-top: 90px; text-align: center; }
     section { padding: 60px 20px; max-width: 900px; margin: auto; }
     h1, h2 { color: #3ba14f; text-align: center; margin-bottom: 20px; }
     p { font-size: 18px; line-height: 1.6; text-align: center; }
+
     .year-block { margin-top: 50px; }
+
     .image-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 10px;
       margin-top: 30px;
     }
+
     .image-grid img {
       width: 100%;
       height: auto;
       border-radius: 8px;
     }
+
     .values {
       margin-top: 60px;
       font-size: 18px;
       text-align: center;
     }
+
     footer {
       background: #3ba14f;
       color: white;
@@ -36,20 +82,43 @@
       padding: 20px;
       font-size: 14px;
     }
+
+    @media(max-width: 600px) {
+      .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 60px;
+      }
+      .nav-logo {
+        top: 5px;
+        right: 10px;
+      }
+    }
   </style>
 </head>
 <body>
-  <header>
-    <img src="logo.png" alt="Wallparty Logo" />
-  </header>
 
-  <section>
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="strutture.html">Strutture</a>
+      <a href="progetto.html">Progetto</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contatti.html">Contatti</a>
+    </div>
+    <a class="nav-logo" href="index.html">
+      <img src="logo.png" alt="Wallparty Logo">
+    </a>
+  </nav>
+
+  <header>
     <h1>Il nostro progetto</h1>
     <p>
       Wallparty è nato per caso e cresciuto con passione. Portiamo l’arrampicata in giro per l’Italia, perché crediamo
       che tutti meritino di provare la gioia e la libertà di salire, di superare se stessi e divertirsi insieme.
     </p>
-  </section>
+  </header>
 
   <section class="year-block">
     <h2>2023 – Il primo passo</h2>

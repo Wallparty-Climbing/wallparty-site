@@ -7,41 +7,147 @@
   <link rel="icon" href="logo.png" type="image/png" />
   <style>
     body { margin: 0; font-family: 'Poppins', sans-serif; background: #fff; color: #333; }
-    header { background: #3ba14f; color: white; padding: 20px; text-align: center; }
-    header img { max-height: 60px; vertical-align: middle; }
-    section { padding: 60px 20px; max-width: 800px; margin: auto; }
-    h1, h2 { color: #3ba14f; text-align: center; }
-    p { font-size: 18px; text-align: center; }
-    form { display: flex; flex-direction: column; gap: 15px; margin-top: 30px; }
-    input, textarea { padding: 12px; font-size: 16px; border: 1px solid #ccc; border-radius: 6px; }
-    button { background: #3ba14f; color: white; padding: 12px; border: none; font-size: 16px; border-radius: 6px; cursor: pointer; }
-    .contact-info { text-align: center; margin-top: 40px; font-size: 18px; }
-    footer { background: #3ba14f; color: white; text-align: center; padding: 20px; font-size: 14px; }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 70px;
+      z-index: 999;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #3ba14f;
+      font-weight: 600;
+      font-size: 16px;
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    .nav-logo {
+      position: absolute;
+      right: 30px;
+      top: 10px;
+    }
+
+    .nav-logo img {
+      height: 50px;
+      cursor: pointer;
+    }
+
+    header { margin-top: 90px; text-align: center; padding: 40px 20px; }
+    h1 { color: #3ba14f; margin-bottom: 15px; }
+    p { font-size: 18px; color: #555; }
+
+    .form-section {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, textarea {
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    button {
+      background: #3ba14f;
+      color: white;
+      border: none;
+      padding: 14px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+
+    button:hover {
+      background: #329644;
+    }
+
+    .contact-info {
+      margin-top: 60px;
+      text-align: center;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    footer {
+      background: #3ba14f;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+
+    @media(max-width: 600px) {
+      .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 60px;
+      }
+      .nav-logo {
+        top: 5px;
+        right: 10px;
+      }
+    }
   </style>
 </head>
 <body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="strutture.html">Strutture</a>
+      <a href="progetto.html">Progetto</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contatti.html">Contatti</a>
+    </div>
+    <a class="nav-logo" href="index.html">
+      <img src="logo.png" alt="Wallparty Logo">
+    </a>
+  </nav>
+
   <header>
-    <img src="logo.png" alt="Wallparty Logo" />
+    <h1>Hai un progetto in mente?</h1>
+    <p>Vuoi portare l’arrampicata nel tuo evento o saperne di più? Scrivici o chiamaci!</p>
   </header>
 
-  <section>
-    <h1>Contattaci</h1>
-    <p>
-      Ti piacerebbe portare l'arrampicata al tuo evento? Hai bisogno di un progetto personalizzato? <br>
-      Siamo pronti ad ascoltarti e a costruire qualcosa di straordinario insieme!
-    </p>
-
+  <section class="form-section">
     <form action="mailto:info.wallparty@gmail.com" method="POST" enctype="text/plain">
       <input type="text" name="Nome" placeholder="Il tuo nome" required />
       <input type="email" name="Email" placeholder="La tua email" required />
-      <textarea name="Messaggio" placeholder="Scrivici il tuo messaggio..." rows="5" required></textarea>
-      <button type="submit">Invia messaggio</button>
+      <textarea name="Messaggio" rows="5" placeholder="Scrivici il tuo messaggio" required></textarea>
+      <button type="submit">Invia</button>
     </form>
 
     <div class="contact-info">
-      <p>📧 info.wallparty@gmail.com</p>
-      <p>📞 342 650 6425</p>
-      <p>📸 Instagram: @wallparty.climbingtower</p>
+      <p>Email: <a href="mailto:info.wallparty@gmail.com">info.wallparty@gmail.com</a></p>
+      <p>Telefono: <a href="tel:+393426506425">342 650 6425</a></p>
+      <p>Instagram: <a href="https://instagram.com/wallparty.climbingtower" target="_blank">@wallparty.climbingtower</a></p>
     </div>
   </section>
 
